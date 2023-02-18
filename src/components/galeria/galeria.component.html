@@ -1,0 +1,25 @@
+<div>
+  <h3>{{title}}</h3>
+</div>
+<div *ngIf="fotos.length > 0">
+  <img [src]="fotos[index]" alt="foto-de-paisagem" class="w-50">
+  <p>Imagem {{index + 1}} de {{fotos.length}}</p>
+  <div class="btn-group">
+    <button (click)="goToFirstImage()" [disabled]="index === 0"
+            class="btn btn-success">
+      |
+    </button>
+    <button (click)="goToPreviousImage()" [disabled]="index === 0"
+            class="btn btn-primary">
+
+    </button>
+    <button (click)="goToNextImage()" [disabled]="index === fotos.length - 1"
+            class="btn btn-primary">
+      >
+    </button>
+    <button (click)="goToLastImage()" [disabled]="index === fotos.length - 1"
+            class="btn btn-success">
+      >|
+    </button>
+  </div>
+</div>
